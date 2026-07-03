@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://hgs47wfay888"]
+
+[ext_resource type="PackedScene" uid="uid://ftbam2qxusce" path="res://scenes/characters/player/player.tscn" id="1_dphjl"]
+[ext_resource type="PackedScene" uid="uid://crj7u5e0yoyet" path="res://scenes/ui/ui.tscn" id="2_sl2e5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4rhad"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dphjl"]
+sky_material = SubResource("ProceduralSkyMaterial_4rhad")
+
+[sub_resource type="Environment" id="Environment_sl2e5"]
+background_mode = 2
+sky = SubResource("Sky_dphjl")
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dphjl"]
+data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
+
+[node name="World" type="Node3D" unique_id=1868730672]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1932979573]
+environment = SubResource("Environment_sl2e5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=438377305]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=603010174]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Player" parent="." unique_id=324928727 instance=ExtResource("1_dphjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0028775, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1158721306]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1337409028]
+shape = SubResource("ConcavePolygonShape3D_dphjl")
+
+[node name="UI" parent="." unique_id=1126650266 instance=ExtResource("2_sl2e5")]
