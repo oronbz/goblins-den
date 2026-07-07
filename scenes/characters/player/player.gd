@@ -25,8 +25,6 @@ func _process(_delta: float) -> void:
 	
 	if rotation_dir != Vector2.ZERO:
 		look(rotation_dir, gamepad_sensitivity)
-	
-	print(is_on_floor())
 
 func _physics_process(delta: float) -> void:
 	check_jump_input()
