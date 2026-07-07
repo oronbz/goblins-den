@@ -8,7 +8,7 @@
 
 [node name="Entrance" parent="Rooms" parent_id_path=PackedInt32Array(1214047771) index="0" unique_id=1006596036 instance=ExtResource("2_iemd2")]
 
-[node name="Foyer" parent="Rooms" parent_id_path=PackedInt32Array(1214047771) index="1" unique_id=1260307208 instance=ExtResource("3_xicp7")]
+[node name="Foyer" parent="Rooms" parent_id_path=PackedInt32Array(1214047771) index="1" unique_id=1379650840 instance=ExtResource("3_xicp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -10)
 
 [node name="Floors" parent="Hallways" parent_id_path=PackedInt32Array(1994160083) index="0" unique_id=1254199950]
